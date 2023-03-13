@@ -31,7 +31,7 @@ export const ShellProvider: React.FC<ShellProviderProps> = ({ children }) => {
   const { theme, setTheme } = useTheme();
 
   useEffect(() => {
-    setCommand('banner');
+    setCommand('start');
   }, []);
 
   useEffect(() => {
@@ -71,7 +71,7 @@ export const ShellProvider: React.FC<ShellProviderProps> = ({ children }) => {
 
     switch (cmd) {
       case 'theme':
-        const output = await bin.theme(args, setTheme);
+        const output = await bin.apps(args, setTheme);
 
         setHistory(output);
 
